@@ -1,0 +1,597 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Avolar International | Premium Spice & Seasoning Exporters</title>
+    <meta name="description" content="Avolar International exports dehydrated onion, garlic, and seasoning blends worldwide. Delivering consistent flavour, reliable supply, and private labelling support for food manufacturers and importers.">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root{
+            --deep:#053f2c; /* primary deep green */
+            --leaf:#4CAF50; /* accent */
+            --ivory:#f7fbf2; /* main bg */
+            --lav:#efeeff; /* lavender band */
+            --card:#ffffff;
+            --muted:#6f7f73;
+            --gold:#c9a646;
+            --max:1200px;
+            --radius:28px;
+        }
+        *{box-sizing:border-box}
+        html,body{height:100%;margin:0;background:var(--ivory);font-family:Poppins,system-ui,Arial,sans-serif;color:var(--deep);-webkit-font-smoothing:antialiased}
+        a{color:inherit}
+        .container{max-width:var(--max);margin:0 auto;padding:0 28px}
+
+        /* Top bar (rounded pill) */
+        .topbar{max-width:1100px;margin:28px auto;border-radius:36px;background:var(--deep);padding:14px 26px;display:flex;align-items:center;justify-content:space-between;box-shadow:0 12px 40px rgba(5,63,44,0.08)}
+        .brand{display:flex;align-items:center;gap:16px}
+        .brand .logo{background:linear-gradient(90deg,var(--deep),var(--leaf));color:#fff;padding:8px 14px;border-radius:10px;font-family:'Playfair Display';font-weight:700}
+        .nav{display:flex;gap:28px;align-items:center;color:rgba(255,255,255,0.92);font-weight:600}
+        /* Get Quote pill now keyboard-focusable and looks interactive */
+        .cta-quote{background:#eaff66;padding:10px 22px;border-radius:30px;color:var(--deep);font-weight:800;cursor:pointer;outline:none;border:0;display:inline-block;transition:transform .16s ease,box-shadow .16s ease}
+        .cta-quote:hover{transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.12)}
+        .cta-quote:focus{box-shadow:0 0 0 4px rgba(76,175,80,0.12)}
+
+        /* Hero split layout with right rounded image */
+        .hero{padding:48px 0 24px}
+        .hero-inner{display:grid;grid-template-columns:1fr 560px;gap:36px;align-items:center;max-width:1200px;margin:0 auto}
+        .hero h1{font-family:'Playfair Display';font-size:64px;line-height:0.95;margin:0;color:var(--deep)}
+        .hero p.lead{margin-top:18px;color:var(--muted);font-size:18px;max-width:640px}
+
+        .hero-visual{background:var(--gold);border-radius:34px;padding:28px;height:420px;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 20px 60px rgba(6,20,10,0.06)}
+        .hero-visual img{width:100%;height:100%;object-fit:cover;border-radius:24px}
+
+        /* Section bands alternating */
+        .section-band {padding:64px 0}
+        .band-lav{background:var(--lav)}
+        .band-iv{background:var(--ivory)}
+
+        /* Challenges cards row */
+        .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;max-width:1180px;margin:28px auto}
+        .card{background:#fafaff;border-radius:28px;padding:28px;min-height:260px;box-shadow:0 10px 40px rgba(6,20,10,0.03);display:flex;flex-direction:column;gap:12px}
+        .card .icon{width:56px;height:56px;border-radius:50%;background:#e6ddff;display:flex;align-items:center;justify-content:center;color:var(--deep);font-weight:700}
+        .card h4{font-family:'Playfair Display';margin:8px 0 6px}
+        .card p{color:var(--muted);margin:0}
+
+        /* Products grid large rounded cards */
+        .products{padding:48px 0}
+        .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;max-width:1200px;margin:0 auto}
+        .product{background:var(--card);padding:20px;border-radius:28px;box-shadow:0 10px 40px rgba(6,20,10,0.04);text-align:center;display:flex;flex-direction:column;gap:12px}
+        .product .imgwrap{height:220px;border-radius:20px;padding:14px;background:#fff;display:flex;align-items:center;justify-content:center}
+        .product img{width:100%;height:100%;object-fit:cover;border-radius:16px}
+        .product h5{margin:12px 0 6px;font-family:'Playfair Display';color:var(--deep)}
+        .product p{color:var(--muted);font-size:14px}
+        .product .actions{margin-top:auto;display:flex;gap:10px;justify-content:center}
+        .btn-ghost{padding:10px 14px;border-radius:16px;border:1px solid #e6ebe6;background:transparent}
+
+        /* Specifications table */
+        .specs-table{max-width:1100px;margin:28px auto;background:var(--card);border-radius:18px;padding:18px;box-shadow:0 10px 40px rgba(6,20,10,0.03)}
+        table{width:100%;border-collapse:collapse;font-size:14px}
+        th,td{padding:12px 14px;border-bottom:1px solid #f1f3f1;text-align:left;color:var(--muted)}
+        th{color:var(--deep);font-weight:700}
+
+        /* Why choose us grid */
+        .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1200px;margin:0 auto;align-items:start}
+        .why-item{display:flex;gap:14px;align-items:flex-start}
+        .why-item .bullet{width:56px;height:56px;border-radius:50%;background:#e6ddff;display:flex;align-items:center;justify-content:center;color:var(--deep)}
+        .why-item h4{margin:0;font-family:'Playfair Display'}
+        .why-item p{margin:8px 0 0;color:var(--muted)}
+
+        /* Contact two-column with large form card */
+        .contact{padding:64px 0}
+        .contact-inner{display:grid;grid-template-columns:1fr 520px;gap:36px;max-width:1200px;margin:0 auto;align-items:start}
+        .contact-left h2{font-family:'Playfair Display';font-size:44px;margin:0 0 12px}
+        .contact-left p{color:var(--muted);max-width:520px}
+        .contact-info{display:flex;flex-direction:column;gap:18px;margin-top:22px}
+        .info-item{display:flex;gap:14px;align-items:center}
+        .info-item .i{width:48px;height:48px;border-radius:50%;background:#e6ddff;display:flex;align-items:center;justify-content:center}
+        .info-item a{color:var(--muted);text-decoration:none;display:inline-block}
+        .info-item a:hover, .info-item a:focus{text-decoration:underline;outline:none}
+        .form-card{background:var(--card);padding:28px;border-radius:30px;box-shadow:0 20px 60px rgba(6,20,10,0.06)}
+        .form-card input,.form-card textarea{width:100%;padding:14px;border-radius:16px;border:1px solid #efeef1;margin-top:8px}
+        .form-card textarea{min-height:140px}
+        .form-card .submit{background:var(--deep);color:#fff;padding:16px;border-radius:28px;border:0;width:100%;font-weight:700;margin-top:12px}
+
+        /* CTA banner dark green */
+        .cta-banner{background:var(--deep);color:#fff;padding:54px 0;text-align:center;margin-top:48px}
+        .cta-banner h3{font-family:'Playfair Display';font-size:40px;margin:0}
+        .cta-banner p{color:#d7efe0;margin-top:10px}
+        .cta-banner .btn{background:#eaff66;color:var(--deep);padding:12px 28px;border-radius:30px;font-weight:800;margin-top:18px}
+
+        /* Footer */
+        footer{padding:48px 0;background:var(--ivory);color:var(--muted)}
+        footer .cols{display:flex;gap:40px;max-width:1200px;margin:0 auto;justify-content:space-between}
+        footer a{color:var(--muted);text-decoration:none}
+        footer a:hover{text-decoration:underline}
+
+        /* Modal */
+        .modal{position:fixed;inset:0;background:rgba(0,0,0,0.5);display:none;align-items:center;justify-content:center;padding:24px;z-index:220}
+        .modal.show{display:flex}
+        .modal-card{width:100%;max-width:760px;background:var(--card);border-radius:12px;padding:18px}
+
+        /* Responsive */
+        @media (max-width:1100px){
+            .hero-inner{grid-template-columns:1fr 420px}
+            .products-grid{grid-template-columns:repeat(2,1fr)}
+            .cards{grid-template-columns:repeat(1,1fr)}
+            .why-grid{grid-template-columns:repeat(1,1fr)}
+            .contact-inner{grid-template-columns:1fr}
+            .hero h1{font-size:48px}
+        }
+        @media (max-width:600px){
+            .topbar{margin:16px;padding:10px;border-radius:20px}
+            .hero-inner{grid-template-columns:1fr}
+            .hero-visual{height:320px}
+            .product .imgwrap{height:180px}
+            .products-grid{grid-template-columns:1fr}
+            .hero h1{font-size:34px}
+            footer .cols{flex-direction:column;gap:20px}
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <header class="topbar" role="banner">
+        <div class="brand"><div class="logo"><a href="#about" style="color:white;text-decoration:none">Avolar</a></div></div>
+        <nav class="nav" role="navigation" aria-label="Main menu">
+            <a href="#about">About</a>
+            <a href="#products">Products</a>
+            <a href="#why">Why Us</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <!-- GET QUOTE pill (id + ARIA + tabindex for keyboard) -->
+        <div class="cta-quote" id="getQuoteBtn" role="button" tabindex="0" aria-controls="contact" aria-label="Get Quote">Get Quote</div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="about" aria-labelledby="hero-heading">
+        <div class="hero-inner">
+            <div>
+                <h1 id="hero-heading">Trusted Exporter of<br/>Premium Quality Spices</h1>
+                <p class="lead">Avolar International is a trusted exporter of premium-quality dehydrated onions, garlic, and seasoning blends, serving clients across Asia, the Middle East, Europe, and North America. We solve sourcing and consistency challenges for importers, manufacturers, and distributors through quality, reliability, and innovation.</p>
+            </div>
+
+            <div class="hero-visual" aria-hidden="true">
+                <img src="images/web 2.png" alt="Assorted spices and textures"/>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- Challenges band -->
+<section class="section-band band-lav" aria-labelledby="challenges-title">
+    <div class="container">
+        <h2 id="challenges-title" style="text-align:center;font-family:'Playfair Display';font-size:44px;margin:12px 0;color:var(--deep)">Challenges We Solve</h2>
+        <p style="text-align:center;color:var(--muted);margin-bottom:28px">We ensure consistency, purity, and reliability — every time</p>
+
+        <div class="cards" role="list">
+            <div class="card" role="listitem">
+                <div class="icon" aria-hidden>!</div>
+                <h4>Inconsistent Flavour</h4>
+                <p>We ensure consistent taste and aroma in every batch through rigorous quality control.</p>
+            </div>
+
+            <div class="card" role="listitem">
+                <div class="icon" aria-hidden>📦</div>
+                <h4>Moisture Control</h4>
+                <p>Advanced drying techniques maintain optimal moisture levels for extended shelf life.</p>
+            </div>
+
+            <div class="card" role="listitem">
+                <div class="icon" aria-hidden>✔️</div>
+                <h4>Purity Guaranteed</h4>
+                <p>No fillers, no additives - only pure, premium-grade spices and seasonings.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Products -->
+<section class="section-band band-iv products" id="products" aria-labelledby="products-title">
+    <div class="container">
+        <h2 id="products-title" style="text-align:center;font-family:'Playfair Display';font-size:44px;margin:12px 0;color:var(--deep)">Our Product Range</h2>
+        <p style="text-align:center;color:var(--muted);margin-bottom:28px">Premium quality dehydrated spices and seasoning solutions</p>
+
+        <div class="products-grid" role="list">
+            <div class="product" data-id="onion" role="listitem">
+                <div class="imgwrap"><img src="images/web6.png" alt="Dehydrated onion"/></div>
+                <h5>Dehydrated Onion</h5>
+                <p>Flakes, Minced, Granules · 4–6% moisture</p>
+                <div class="actions"><button class="btn-ghost" data-spec="onion" aria-haspopup="dialog">View Specs</button></div>
+            </div>
+
+            <div class="product" data-id="garlic" role="listitem">
+                <div class="imgwrap"><img src="images/web 4.png" alt="Dehydrated garlic"/></div>
+                <h5>Dehydrated Garlic</h5>
+                <p>Flakes, Minced, Granules, Powder · 4–6% moisture</p>
+                <div class="actions"><button class="btn-ghost" data-spec="garlic" aria-haspopup="dialog">View Specs</button></div>
+            </div>
+
+            <div class="product" data-id="onion-powder" role="listitem">
+                <div class="imgwrap"><img src="images/web 5.png" alt="Onion powder"/></div>
+                <h5>Onion Powder</h5>
+                <p>Fine mesh powder · 5% moisture · 18–24 months</p>
+                <div class="actions"><button class="btn-ghost" data-spec="onion-powder" aria-haspopup="dialog">View Specs</button></div>
+            </div>
+
+            <div class="product" data-id="garlic-powder" role="listitem">
+                <div class="imgwrap"><img src="images/web 3.png" alt="Garlic powder"/></div>
+                <h5>Garlic Powder</h5>
+                <p>Fine mesh powder · 5% moisture · 18–24 months</p>
+                <div class="actions"><button class="btn-ghost" data-spec="garlic-powder" aria-haspopup="dialog">View Specs</button></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why choose us -->
+<section class="section-band band-lav" id="why" aria-labelledby="why-title">
+    <div class="container">
+        <h2 id="why-title" style="text-align:center;font-family:'Playfair Display';font-size:44px;margin:12px 0;color:var(--deep)">Why Choose Avolar International</h2>
+        <p style="text-align:center;color:var(--muted);margin-bottom:28px">Our products add flavour, aroma, and value to kitchens across the globe</p>
+
+        <div class="why-grid">
+            <div class="why-item">
+                <div class="bullet" aria-hidden>🌱</div>
+                <div>
+                    <h4>Premium Raw Materials</h4>
+                    <p>Sourced from trusted Indian farms with sustainable farming practices.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <div class="bullet" aria-hidden>✅</div>
+                <div>
+                    <h4>FSSAI Certified</h4>
+                    <p>Certified hygiene and food safety standards for peace of mind.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <div class="bullet" aria-hidden>🌍</div>
+                <div>
+                    <h4>Custom Blends</h4>
+                    <p>Tailored seasoning solutions for regional tastes and preferences.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <div class="bullet" aria-hidden>🚚</div>
+                <div>
+                    <h4>Timely Exports</h4>
+                    <p>Reliable logistics ensuring on-time delivery to global destinations.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <div class="bullet" aria-hidden>📦</div>
+                <div>
+                    <h4>Private Labelling</h4>
+                    <p>Branding and packaging solutions customized to your requirements.</p>
+                </div>
+            </div>
+
+            <div class="why-item">
+                <div class="bullet" aria-hidden>💰</div>
+                <div>
+                    <h4>Competitive Pricing</h4>
+                    <p>Premium quality at competitive rates with transparent pricing.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact -->
+<section class="section-band band-iv contact" id="contact" aria-labelledby="contact-title">
+    <div class="container">
+        <div class="contact-inner">
+            <div class="contact-left">
+                <h2 id="contact-title">Let's Connect and Spice Up Your Success!</h2>
+                <p>Ready to partner with us? Get in touch today and discover how we can help solve your sourcing challenges.</p>
+
+                <div class="contact-info">
+                    <!-- phone link (tel:) -->
+                    <div class="info-item">
+                        <div class="i" aria-hidden>📞</div>
+                        <div>
+                            <strong>Phone</strong>
+                            <div>
+                                <a href="tel:+919875216266" aria-label="Call Avolar International">+91 98752 16266</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- email link (mailto:) -->
+                    <div class="info-item">
+                        <div class="i" aria-hidden>✉️</div>
+                        <div>
+                            <strong>Email</strong>
+                            <div>
+                                <a href="mailto:export@avolarinternational.com" aria-label="Email Avolar International">export@avolarinternational.com</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- linkedin link (opens in new tab) -->
+                    <div class="info-item">
+                        <div class="i" aria-hidden>🔗</div>
+                        <div>
+                            <strong>LinkedIn</strong>
+                            <div>
+                                <a href="https://linkedin.com/in/dixitmakwana" target="_blank" rel="noopener noreferrer" aria-label="Open Avolar International LinkedIn profile">linkedin.com/in/dixitmakwana</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <aside class="form-card" aria-labelledby="contact-form-title">
+                <h3 id="contact-form-title" style="font-family:'Playfair Display';margin:0 0 8px;color:var(--deep)">Request a Quote / Sample</h3>
+                <form id="contact-form">
+                    <label for="name">Name *</label>
+                    <input id="name" name="name" placeholder="Your name" required />
+                    <label for="email">Email *</label>
+                    <input id="email" name="email" type="email" placeholder="you@example.com" required />
+                    <label for="product">Product (optional)</label>
+                    <input id="product" name="product" placeholder="E.g., Dehydrated Garlic" />
+                    <label for="phone">Phone</label>
+                    <input id="phone" name="phone" placeholder="+1 234 567 8900" />
+                    <label for="company">Company</label>
+                    <input id="company" name="company" placeholder="Your company name" />
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your requirement" required></textarea>
+                    <button type="submit" class="submit">Send Message</button>
+                </form>
+                <div id="formNotice" style="display:none;margin-top:12px;color:var(--deep);font-weight:600"></div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<!-- CTA banner -->
+<section class="cta-banner" aria-hidden="false">
+    <div class="container">
+        <h3>Partner with Avolar International</h3>
+        <p>Where quality meets trust. Let's spice up your success together.</p>
+        <div><a class="btn" href="#contact">Start Your Journey →</a></div>
+    </div>
+</section>
+
+<footer role="contentinfo">
+    <div class="container">
+        <div class="cols">
+            <div>
+                <div style="font-family:'Playfair Display';font-weight:700;color:var(--deep)"><a href="#about" style="color:var(--deep);text-decoration:none">Avolar International</a></div>
+                <div style="margin-top:10px;color:var(--muted)">Delivering Global Flavours with Consistency, Quality, and Trust.</div>
+            </div>
+            <div>
+                <strong>Products</strong>
+                <ul style="list-style:none;padding:0;margin:8px 0;color:var(--muted)">
+                    <li><a href="#products">Dehydrated Onion</a></li>
+                    <li><a href="#products">Dehydrated Garlic</a></li>
+                    <li><a href="#products">Onion Powder</a></li>
+                    <li><a href="#products">Garlic Powder</a></li>
+                </ul>
+            </div>
+            <div>
+                <strong>Company</strong>
+                <ul style="list-style:none;padding:0;margin:8px 0;color:var(--muted)">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#why">Why Choose Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <strong>Contact</strong>
+                <div style="color:var(--muted);margin-top:8px;display:flex;flex-direction:column;gap:6px">
+                    <a href="tel:+919875216266" aria-label="Call Avolar International">+91 98752 16266</a>
+                    <a href="mailto:export@avolarinternational.com" aria-label="Email Avolar International">export@avolarinternational.com</a>
+                    <a href="https://linkedin.com/in/dixitmakwana" target="_blank" rel="noopener noreferrer" aria-label="Open LinkedIn profile">LinkedIn Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Modal for specs -->
+<div class="modal" id="specModal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card" role="document">
+        <button id="closeSpec" style="float:right;background:none;border:0;font-size:18px" aria-label="Close specifications">✕</button>
+        <div id="specContent">Loading…</div>
+    </div>
+</div>
+
+<script>
+    // helper: safe query
+    const $ = s => document.querySelector(s);
+
+    // smooth scroll for internal links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', e=>{
+            const t = a.getAttribute('href');
+            if(t && t.startsWith('#')){
+                e.preventDefault();
+                const el = document.querySelector(t);
+                if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+            }
+        });
+    });
+
+    // GET QUOTE button behavior (scroll to contact + focus)
+    const getQuoteBtn = document.getElementById('getQuoteBtn');
+    if(getQuoteBtn){
+        const activateQuote = () => {
+            const contactSection = document.getElementById('contact');
+            if(!contactSection) return;
+            contactSection.scrollIntoView({behavior:'smooth', block:'start'});
+            // focus first logical control after scroll completes (small delay)
+            setTimeout(() => {
+                const first = $('#name') || $('#product') || $('#message') || $('input, textarea');
+                if(first) first.focus({preventScroll:true});
+            }, 520);
+        };
+        getQuoteBtn.addEventListener('click', activateQuote);
+        getQuoteBtn.addEventListener('keydown', (e) => {
+            if(e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activateQuote(); }
+        });
+    }
+
+    // Specs data
+    const specs = {
+        'onion': {
+            title: 'Dehydrated Onion (Flakes / Minced / Granules)',
+            data: {
+                'Variety': 'White / Red Onion',
+                'Color': 'Natural White to Light Pink',
+                'Moisture': '4–6% Max',
+                'Quality': 'Grade A (Flakes, Minced, Chopped, Granules)',
+                'Shelf Life': '24 Months',
+                'Packaging': '10kg / 12kg / 20kg cartons, bulk & custom packs'
+            }
+        },
+        'garlic': {
+            title: 'Dehydrated Garlic (Flakes / Minced / Granules / Powder)',
+            data: {
+                'Variety': 'White Garlic',
+                'Color': 'Natural White to Creamy Yellow',
+                'Moisture': '4–6% Max',
+                'Quality': 'Grade A (Flakes, Minced, Granules, Powder)',
+                'Shelf Life': '24 Months',
+                'Packaging': '10kg / 12kg / 20kg cartons, bulk & custom packs'
+            }
+        },
+        'onion-powder': {
+            title: 'Onion Powder (Fine Mesh)',
+            data: {
+                'Variety': 'White Onion',
+                'Color': 'Off White',
+                'Moisture': '5% Max',
+                'Quality': 'Fine Mesh Powder, Grade A',
+                'Shelf Life': '18–24 Months',
+                'Packaging': '20kg bags / cartons'
+            }
+        },
+        'garlic-powder': {
+            title: 'Garlic Powder (Fine Mesh)',
+            data: {
+                'Variety': 'White Garlic',
+                'Color': 'Creamy White',
+                'Moisture': '5% Max',
+                'Quality': 'Fine Mesh Powder, Grade A',
+                'Shelf Life': '18–24 Months',
+                'Packaging': '20kg bags / cartons'
+            }
+        }
+    };
+
+    // Modal element refs
+    const modal = document.getElementById('specModal');
+    const content = document.getElementById('specContent');
+    const closeSpec = document.getElementById('closeSpec');
+
+    // open specs modal
+    document.querySelectorAll('[data-spec]').forEach(btn=>{
+        btn.addEventListener('click', ()=>{
+            const id = btn.getAttribute('data-spec');
+            const item = specs[id];
+            if(!item) return;
+            let html = `<h3 style="margin-top:0;color:var(--deep);font-family:'Playfair Display';">${item.title}</h3>`;
+            html += `<table style="width:100%;margin-top:12px;border-collapse:collapse">`;
+            for(const k in item.data){
+                html += `<tr><th style="text-align:left;padding:8px 12px;color:var(--muted);width:160px;font-weight:600">${k}</th><td style="padding:8px 12px;color:var(--deep)">${item.data[k]}</td></tr>`;
+            }
+            html += `</table>`;
+            html += `<div style="margin-top:16px;text-align:right"><button class="btn-ghost" id="specContact">Request Sample / Quote</button></div>`;
+            content.innerHTML = html;
+            modal.classList.add('show');
+            modal.setAttribute('aria-hidden','false');
+
+            // attach handler for the newly created button
+            const contactBtn = document.getElementById('specContact');
+            if(contactBtn){
+                contactBtn.addEventListener('click', ()=>{
+                    // prefill product in the contact form
+                    const productInput = $('#product');
+                    if(productInput) productInput.value = item.title.replace(/\s*\(.*\)$/, '').trim();
+                    // close modal and scroll to contact
+                    modal.classList.remove('show');
+                    modal.setAttribute('aria-hidden','true');
+                    const contactSection = document.getElementById('contact');
+                    if(contactSection){
+                        contactSection.scrollIntoView({behavior:'smooth', block:'start'});
+                        // focus message input after scroll
+                        setTimeout(()=>{ const msg = $('#message'); if(msg) msg.focus({preventScroll:true}); }, 520);
+                    }
+                });
+            }
+        });
+    });
+
+    // modal controls (close + backdrop + Esc)
+    if(closeSpec){
+        closeSpec.addEventListener('click', ()=>{ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); });
+    }
+    modal.addEventListener('click', (e)=>{ if(e.target === modal){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); } });
+    document.addEventListener('keydown', (e)=>{ if(e.key === 'Escape' && modal.classList.contains('show')){ modal.classList.remove('show'); modal.setAttribute('aria-hidden','true'); } });
+
+    // contact form submit: open user's email client using mailto: (target recipient export@avolarinternational.com)
+    (function(){
+        const contactForm = document.getElementById('contact-form');
+        const notice = document.getElementById('formNotice');
+        const RECIPIENT = 'export@avolarinternational.com';
+
+        if(!contactForm) return;
+
+        contactForm.addEventListener('submit', function(e){
+            e.preventDefault();
+
+            // collect fields
+            const name = (this.name?.value || '').trim();
+            const email = (this.email?.value || '').trim();
+            const product = (this.product?.value || '').trim();
+            const phone = (this.phone?.value || '').trim();
+            const company = (this.company?.value || '').trim();
+            const message = (this.message?.value || '').trim();
+
+            // basic validation
+            if(!name || !email || !message){
+                notice.style.display = 'block';
+                notice.style.color = 'crimson';
+                notice.textContent = 'Please fill the required fields: Name, Email and Message.';
+                return;
+            }
+
+            // Build subject and body
+            const subject = `Enquiry from website — ${name}${product ? ' — ' + product : ''}`;
+            let body = `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCompany: ${company}\nProduct: ${product}\n\nMessage:\n${message}\n\n---\nSent from Avolar International website`;
+
+            // encode
+            const mailto = `mailto:${encodeURIComponent(RECIPIENT)}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+            // Try to open mail client
+            // Some browsers block window.location for mailto in strict CSP contexts — this is the most compatible
+            try {
+                // show small notice so user knows what's happening
+                notice.style.display = 'block';
+                notice.style.color = 'var(--deep)';
+                notice.textContent = 'Opening your email client to send the enquiry...';
+
+                // open mailto link
+                window.location.href = mailto;
+
+                // Reset form after a short delay (user may cancel mail client)
+                setTimeout(()=>{ contactForm.reset(); notice.style.display = 'none'; }, 1200);
+            } catch(err){
+                // fallback message
+                notice.style.display = 'block';
+                notice.style.color = 'crimson';
+                notice.innerHTML = 'Could not launch your email client. Please send your enquiry to <a href="mailto:export@avolarinternational.com">export@avolarinternational.com</a>.';
+            }
+        });
+    })();
+</script>
+</body>
+</html>
